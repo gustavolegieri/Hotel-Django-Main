@@ -1,0 +1,72 @@
+ .reserve-container {
+    max-width: 420px;
+    margin: 50px auto;
+    padding: 30px 35px;
+    background: #f5f8fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #222;
+  }
+
+  form.reserve-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #444;
+  }
+
+  input[type="text"] {
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus {
+    border-color: #0077cc;
+    outline: none;
+  }
+
+  button {
+    margin-top: 12px;
+    padding: 12px 0;
+    background-color: #0077cc;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #005fa3;
+  }
+
+  .btn-voltar {
+    display: block;
+    margin: 25px auto 0;
+    width: fit-content;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0077cc;
+    transition: color 0.3s ease;
+  }
+
+  .btn-voltar:hover {
+    color: #005fa3;
+  }

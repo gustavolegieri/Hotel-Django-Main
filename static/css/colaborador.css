@@ -1,0 +1,74 @@
+ .form-container {
+    max-width: 450px;
+    margin: 40px auto;
+    background: #f9f9f9;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+  }
+
+  form.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #0066cc;
+    outline: none;
+  }
+
+  button {
+    padding: 12px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #004a99;
+  }
+
+  .btn-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .btn-voltar:hover {
+    color: #ffffff;
+  }

@@ -1,0 +1,31 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block menu_links %}
+    <a href="{% url 'dashboard_gerente' %}">Dashboard</a>
+    <a href="{% url 'listar_quartos' %}">Listar Quartos</a>
+    <a href="{% url 'cadastrar_colaborador' %}">Cadastrar Colaborador</a>
+    <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+{% endblock %}
+
+{% block content %}
+<div class="list-container">
+    <h2>Todos os Quartos</h2>
+    <ul class="quartos-list">
+        {% for quarto in quartos %}
+            <li class="quarto-item">
+                <span class="quarto-num">Nº {{ quarto.numero }}</span> - 
+                <span class="quarto-tipo">Tipo: {{ quarto.tipo }}</span> - 
+                <span class="quarto-capacidade">Capacidade: {{ quarto.capacidade }}</span> - 
+                <span class="quarto-status {{ quarto.status|lower }}">{{ quarto.status }}</span>
+                {% if quarto.status == "Disponível" %}
+                    | <a href="{% url 'reservar_quarto' quarto.id %}" class="btn-reservar">Reservar</a>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li class="empty">Nenhum quarto cadastrado.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'dashboard_gerente' %}" class="btn-voltar">Voltar</a>
+</div>
+{% endblock %}

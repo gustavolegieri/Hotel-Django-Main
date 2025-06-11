@@ -1,0 +1,17 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block menu_links %}
+    <a href="{% url 'cadastrar_quarto' %}">Cadastrar Quarto</a>
+    <a href="{% url 'listar_quartos' %}">Listar Quartos</a>
+    <a href="{% url 'cadastrar_colaborador' %}">Cadastrar Colaborador</a>
+    <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+{% endblock %}
+
+{% block content %}
+<div class="text-block">
+    <h2>Painel do Gerente</h2>
+    <p>Gerencie todos os aspectos do hotel: cadastre quartos, veja a ocupação, controle os colaboradores e mantenha tudo rodando com excelência.</p>
+</div>
+<img src="{% static 'img/saas.jpg' %}" class="hotel-image" alt="Imagem do hotel">
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block menu_links %}
+    <a href="{% url 'dashboard_gerente' %}">Dashboard</a>
+    <a href="{% url 'cadastrar_quarto' %}">Cadastrar Quarto</a>
+    <a href="{% url 'listar_quartos' %}">Listar Quartos</a>
+    <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+  <h2>Cadastrar Colaborador (Atendente)</h2>
+  <form method="post" class="form-box">
+    {% csrf_token %}
+    <label>Usuário:
+      <input type="text" name="username" required placeholder="Digite o nome de usuário">
+    </label>
+    <label>Senha:
+      <input type="password" name="password" required placeholder="Digite a senha">
+    </label>
+    <button type="submit">Cadastrar</button>
+  </form>
+  <a href="{% url 'dashboard_gerente' %}" class="btn-voltar">Voltar</a>
+</div>
+{% endblock %}

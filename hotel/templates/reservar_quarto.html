@@ -1,0 +1,23 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block menu_links %}
+    <a href="{% url 'dashboard_gerente' %}">Dashboard</a>
+    <a href="{% url 'listar_quartos' %}">Listar Quartos</a>
+    <a href="{% url 'cadastrar_colaborador' %}">Cadastrar Colaborador</a>
+    <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+{% endblock %}
+
+{% block content %}
+<div class="reserve-container">
+    <h2>Reservar Quarto Nº {{ quarto.numero }}</h2>
+    <form method="post" class="reserve-form">
+        {% csrf_token %}
+        <label for="nome_hospede">Nome do Hóspede:</label>
+        <input type="text" id="nome_hospede" name="nome_hospede" required placeholder="Digite o nome completo">
+
+        <button type="submit">Reservar</button>
+    </form>
+    <a href="{% url 'listar_quartos_disponiveis' %}" class="btn-voltar">Voltar</a>
+</div>
+{% endblock %}

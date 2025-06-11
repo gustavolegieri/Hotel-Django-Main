@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Dashboard - Hotelaria</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cadastrar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quartos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colaborador.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reservar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/disponiveis.css' %}">
+</head>
+<body>
+    <header class="top-nav">
+        <img src="{% static 'img/logo.png' %}" class="logo" alt="Logo do Hotel">
+        <nav class="menu">
+            {% block menu_links %}{% endblock %}
+            <form method="post" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit">Sair</button>
+            </form>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

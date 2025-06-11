@@ -1,0 +1,14 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block menu_links %}
+    <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+{% endblock %}
+
+{% block content %}
+<div class="text-block">
+    <h2>Painel do Atendente</h2>
+    <p>Bem-vindo, {{ user.username }}. Aqui você pode visualizar os quartos disponíveis e auxiliar os hóspedes com excelência.</p>
+</div>
+<img src="{% static 'img/saas.jpg' %}" class="hotel-image" alt="Imagem da recepção do hotel">
+{% endblock %}

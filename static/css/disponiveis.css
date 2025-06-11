@@ -1,0 +1,116 @@
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #222;
+}
+
+
+.quartos-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.quartos-table thead tr {
+    background-color: #004080;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.quartos-table th,
+.quartos-table td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Linhas da tabela */
+.quartos-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Status disponível */
+.disponivel td:nth-child(4) {
+    color: #2e7d32; /* verde */
+    font-weight: 600;
+}
+
+/* Status indisponível */
+.indisponivel td:nth-child(4) {
+    color: #c62828; /* vermelho */
+    font-weight: 600;
+}
+
+/* Botão reservar */
+.btn-reservar {
+    background-color: #0066cc;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+}
+
+.btn-reservar:hover {
+    background-color: #004080;
+}
+
+/* Texto sem ação para quartos indisponíveis */
+.sem-acao {
+    color: #777;
+    font-style: italic;
+}
+
+/* Nenhum quarto cadastrado */
+.sem-quartos {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+/* Botão voltar */
+.btn-voltar {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 10px 25px;
+    background-color: #777;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.25s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #555;
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+    .quartos-table th,
+    .quartos-table td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-reservar, .btn-voltar {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}

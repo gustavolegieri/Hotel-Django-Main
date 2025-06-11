@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login - Hotelaria</title>
+    <link rel="stylesheet" href="{% static 'css/login_css.css' %}">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <h2 class="login-title">Login no Sistema</h2>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for msg in messages %}
+                <li>{{ msg }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <label for="username">Usuário</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>

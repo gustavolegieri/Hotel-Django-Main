@@ -1,0 +1,58 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block menu_links %}
+    {% if user_role == 'gerente' %}
+        <a href="{% url 'cadastrar_quarto' %}">Cadastrar Quarto</a>
+        <a href="{% url 'listar_quartos' %}">Listar Quartos</a>
+        <a href="{% url 'cadastrar_colaborador' %}">Cadastrar Colaborador</a>
+        <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+    {% elif user_role == 'atendente' %}
+        <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+    {% else %}
+        <a href="{% url 'listar_quartos_disponiveis' %}">Quartos Disponíveis</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Lista Completa de Quartos</h1>
+    <table class="quartos-table">
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Tipo</th>
+                <th>Capacidade</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quarto in quartos %}
+            <tr class="{% if quarto.status == 'Disponível' %}disponivel{% else %}indisponivel{% endif %}">
+                <td>{{ quarto.numero }}</td>
+                <td>{{ quarto.tipo }}</td>
+                <td>{{ quarto.capacidade }}</td>
+                <td>{{ quarto.status }}</td>
+                <td>
+                    {% if quarto.status == "Disponível" %}
+                    <a href="{% url 'reservar_quarto' quarto.id %}" class="btn-reservar">Reservar</a>
+                    {% else %}
+                    <span class="sem-acao">Indisponível</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="sem-quartos">Nenhum quarto cadastrado.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if user_role == 'gerente' %}
+        <a href="{% url 'dashboard_gerente' %}" class="btn-voltar">Voltar ao Painel</a>
+    {% elif user_role == 'atendente' %}
+        <a href="{% url 'dashboard_atendente' %}" class="btn-voltar">Voltar ao Painel</a>
+    {% endif %}
+</div>
+{% endblock %}
